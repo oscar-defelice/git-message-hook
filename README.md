@@ -5,6 +5,7 @@
 ![docs](https://readthedocs.org/projects/git-message-hook/badge/?version=latest)
 [![patreon](https://img.shields.io/badge/Patreon-brown.svg?logo=patreon)](https://www.patreon.com/oscardefelice)
 [![follow](https://img.shields.io/twitter/follow/oscardefelice.svg?style=social)](https://twitter.com/OscardeFelice)
+[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?&logo=linkedin&logoColor=white)](https://linkedin.com/in/oscar-de-felice)
 
 # git-message-hook
 

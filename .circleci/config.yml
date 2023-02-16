@@ -8,7 +8,7 @@ jobs:
       - run:
           command: | # create whl
             python setup.py sdist bdist_wheel
-            pip install --upgrade pip
+            sudo pip install --upgrade pip
             sudo pip install dist/git_message_hook-1.0-py3-none-any.whl
   test_pypi_publish:
     docker:

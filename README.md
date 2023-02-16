@@ -4,7 +4,7 @@
 ![last-commit](https://img.shields.io/github/last-commit/oscar-defelice/git-message-hook.svg)
 ![docs](https://readthedocs.org/projects/git-message-hook/badge/?version=latest)
 [![patreon](https://img.shields.io/badge/Patreon-brown.svg?logo=patreon)](https://www.patreon.com/oscardefelice)
-[![follow](https://img.shields.io/twitter/follow/prahladyeri.svg?style=social)](https://twitter.com/OscardeFelice)
+[![follow](https://img.shields.io/twitter/follow/oscardefelice.svg?style=social)](https://twitter.com/OscardeFelice)
 
 # git-message-hook
 

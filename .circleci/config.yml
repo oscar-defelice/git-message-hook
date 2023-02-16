@@ -30,8 +30,7 @@ jobs:
           command: | # create whl, install twine and publish to PyPI
             python setup.py sdist bdist_wheel
             sudo pip install --upgrade pip
-            pip install twine
-
+            sudo pip install twine
             twine upload dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
 workflows:
   build_test_publish:

@@ -31,6 +31,7 @@ jobs:
             python setup.py sdist bdist_wheel
             sudo pip install --upgrade pip
             pip install twine
+
             twine upload dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
 workflows:
   build_test_publish:

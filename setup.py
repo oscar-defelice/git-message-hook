@@ -7,7 +7,6 @@ from setuptools.command.install import install
 
 import site
 from distutils.dir_util import copy_tree
-#import shutil
 
 pypi_name = "git-message-hook"
 pkg_name = "git_message_hook"
@@ -37,12 +36,12 @@ s = setup(
 	long_description=read("README.md"),
 	long_description_content_type='text/markdown',
 	keywords="security,scanner",
-	url='https://github.com/prahladyeri/%s' % pypi_name,
+	url='https://github.com/oscar-defelice/%s' % pypi_name,
 	packages=find_packages(),
 	include_package_data=True,
 	entry_points={
 		"console_scripts": [
-			"enforce-git-message = enforce_git_message.main:main",
+			"git-message-hook = git_message_hook.main:main",
 		],
 	},
 	install_requires=[],

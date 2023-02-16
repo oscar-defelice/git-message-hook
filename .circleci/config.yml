@@ -1,0 +1,51 @@
+version: 2.1
+jobs:
+  build_wheel:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout # checkout source code to working directory
+      - run:
+          command: | # create whl
+            python setup.py sdist bdist_wheel
+            pip install dist/git_message_hook-1.0-py3-none-any.whl
+  test_pypi_publish:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout # checkout source code to working directory
+      - run:
+          command: | # create whl, install twine and publish to Test PyPI
+            python setup.py sdist bdist_wheel
+            sudo pip install pipenv
+            pipenv install twine
+            pipenv run twine upload --repository testpypi dist/*
+  pypi_publish:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout # checkout source code to working directory
+      - run:
+          command: | # create whl, install twine and publish to PyPI
+            python setup.py sdist bdist_wheel
+            sudo pip install pipenv
+            pipenv install twine
+            pipenv run twine upload dist/*
+workflows:
+  build_test_publish:
+    jobs:
+      - build_wheel
+      - test_pypi_publish:
+          requires:
+            - build_wheel
+          filters:
+            branches:
+              only:
+                - develop
+      - pypi_publish:
+          requires:
+            - build_wheel
+          filters:
+            branches:
+              only:
+                - main

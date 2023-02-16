@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Git Message Hook'
-copyright = '2022, Oscar de Felice'
+copyright = '2023, Oscar de Felice'
 author = 'Oscar de Felice'
 
 

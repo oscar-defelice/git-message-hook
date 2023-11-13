@@ -73,11 +73,11 @@ After that, try doing the commit with a valid message and it should work:
 		 create mode 100644 foo.txt
 		 create mode 100644 bar.txt
 
-Notes
-======
+..
+	Notes
+	======
 
-`Read this article <https://prahladyeri.com/blog/2019/06/how-to-enforce-conventional-commit-messages-using-git-hooks.html>`_ to fully understand how the enforcement actually works by using git hooks.
-
+	`Read this article <https://prahladyeri.com/blog/2019/06/how-to-enforce-conventional-commit-messages-using-git-hooks.html>`_ to fully understand how the enforcement actually works by using git hooks.
 
 Attribution
 =============

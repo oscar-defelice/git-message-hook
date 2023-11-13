@@ -1,6 +1,6 @@
 __author__ = "Oscar de Felice"
 __email__ = "oscar.defelice@gmail.com"
-__copyright__ = "(c) 2022 Oscar de Felice"
+__copyright__ = "(c) 2023 Oscar de Felice"
 
 __license__ = "MIT"
 __version__ = "1.0.5"

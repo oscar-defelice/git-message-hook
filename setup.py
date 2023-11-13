@@ -26,13 +26,16 @@ class PostInstallCommand(install):
         os.system("echo CUSTOM_PRE_MESSAGE")
         install.run(self)
         os.system("echo CUSTOM_POST_MESSAGE")
-        # conf_path_temp = resource_filename(Requirement.parse(pypi_name), "git-templates")
-        # the_path = site.getusersitepackages() # => Useless and misleading
-        fpath = os.path.join(self.install_lib, pkg_name)
-        fpath = os.path.join(fpath, "git-templates")
-        tpath = os.path.join(os.path.expanduser("~"), ".git-templates")
-        os.system("git config --global init.templatedir ~/.git-templates")
-        copy_tree(fpath, tpath)
+
+        # Install git-message-hook script into hooks directory
+        hooks_dir = os.path.join(
+            self.install_lib, "git_message_hook", "git-templates", "hooks"
+        )
+        git_hooks_dir = os.path.join(os.path.expanduser("~"), ".git", "hooks")
+
+        if os.path.isdir(git_hooks_dir):
+            copy_tree(hooks_dir, git_hooks_dir)
+            print("git-message-hook script installed in Git hooks directory.")
 
 
 def read(fname):
@@ -64,6 +67,11 @@ s = setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points={
+        "console_scripts": [
+            "git-message-hook = git-templates.hooks:commit-msg",
+        ],
+    },
     cmdclass={
         "install": PostInstallCommand,
     },

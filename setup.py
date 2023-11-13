@@ -69,7 +69,7 @@ s = setup(
     ],
     entry_points={
         "console_scripts": [
-            "git-message-hook = git-templates.hooks:commit-msg",
+            "git-message-hook = git-templates.main:main",
         ],
     },
     cmdclass={

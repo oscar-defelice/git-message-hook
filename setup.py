@@ -41,7 +41,7 @@ def read(fname):
 
 s = setup(
     name=pypi_name,
-    version=__version__,
+    version="{{VERSION_PLACEHOLDER}}",
     license=__license__,
     description=__description__,
     long_description=read("README.md"),
